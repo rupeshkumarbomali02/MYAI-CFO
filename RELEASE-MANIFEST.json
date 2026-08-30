@@ -1,0 +1,47 @@
+{
+  "package": "MYAI-CFO-1.24.26",
+  "version": "1.24.26",
+  "releaseIteration": "V46",
+  "basis": "Actual V46/1.24.26 source plus cumulative remediation; Earlier candidate packages were not treated as user-tested.",
+  "syntheticEvidence": {
+    "companies": 4,
+    "financialStatementsMinimum": 12,
+    "comprehensiveKpiWorkbook": true,
+    "comprehensiveKpiCount": 85,
+    "comprehensiveKpiYears": 3,
+    "knowledgePdf": true,
+    "knowledgeUrl": true
+  },
+  "strictCertification": {
+    "zeroFailuresRequired": true,
+    "minimumEvaluationCoveragePercent": 100,
+    "productionModelRequired": true
+  },
+  "processControl": {
+    "documentExtractionMaxMs": 900000,
+    "certificationMaxStepMs": 1200000,
+    "syntheticJobWaitSeconds": 1200,
+    "visibleRuntimeSerializedDuringCert004B": true
+  },
+  "changes": [
+    "Exact ratio readiness diagnostics with same-year pair evidence and failure reason.",
+    "Blank/dash derived zeros are not accepted as valid financial facts.",
+    "Non-zero candidate preference for same-year ratio inputs where alternatives exist.",
+    "Visible local model runtime is unloaded during isolated CERT-004B provisioning and restored afterward.",
+    "Synthetic document and knowledge waits use a 1,200-second deadline with request-timeout reconciliation.",
+    "SEC filename reporting-period detection verified for Microsoft and retained for Tesla.",
+    "CFO PA hard-coded excerpt answer removed; normal conversational generation follows exact evidence gating.",
+    "Comprehensive 85-KPI workbook automatically provisioned to MYAI CFO Test — Comprehensive.",
+    "Package cleaned of generated local QA state; release version unified to 1.24.26.",
+    "Optional PdfTable (CycloneBoy/pdf_table, arXiv:2409.05125) integrated as an independent table signal; core extraction remains functional when PdfTable is unavailable."
+  ],
+  "productionGo": false,
+  "pdfTable": {
+    "integration": "optional-independent-signal",
+    "adapter": "scripts/pdf/pdftable_adapter.py",
+    "setup": "scripts/setup/setup-pdftable.ps1",
+    "upstream": "https://github.com/CycloneBoy/pdf_table",
+    "paper": "https://arxiv.org/abs/2409.05125",
+    "modelsDownloadedAutomatically": false
+  }
+}

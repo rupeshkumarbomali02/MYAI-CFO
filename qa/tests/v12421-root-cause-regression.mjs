@@ -1,0 +1,14 @@
+import fs from 'node:fs';
+import path from 'node:path';
+const root=path.resolve(path.dirname(new URL(import.meta.url).pathname),'../..');
+const server=fs.readFileSync(path.join(root,'app/backend/server.mjs'),'utf8');
+const extraction=fs.readFileSync(path.join(root,'scripts/extraction/document_ensemble.py'),'utf8');
+const checks=[];
+const expect=(id,ok,detail)=>checks.push({id,status:ok?'PASS':'FAIL',ok,detail});
+expect('RATIO_READINESS_PROPERTY_PATH',server.includes('const ratioReady=!!activeC&&!!tx.metadata?.ratiosReady;'),'Diagnostic reads ratio readiness from dataTransmissionAudit metadata.');
+expect('NO_STALE_RATIO_PROPERTY',!server.includes('const ratioReady=!!activeC&&tx.ratiosReady;'),'Stale diagnostic property path is absent.');
+expect('RATIO_EVIDENCE_VISIBLE',server.includes('ratioInputFactIds') && server.includes('ratioInputValues'),'Diagnostic exposes selected ratio fact IDs and values.');
+expect('EXCEL_LATEST_YEAR',extraction.includes("max(excel_years) if len(excel_years)>=2"),'Multi-year Excel document period uses latest comparative year.');
+expect('GPU_RESOURCE_PROFILE',server.includes("productionProfile:'machine-aware-cpu-gpu'") && server.includes('resourceProfile'),'Runtime API exposes machine-aware CPU/GPU profile.');
+const out={schemaVersion:'1.0',suite:'V12421_ROOT_CAUSE_REGRESSION',status:checks.every(x=>x.ok)?'PASS':'FAIL',checks};
+console.log(JSON.stringify(out)); process.exitCode=out.status==='PASS'?0:2;

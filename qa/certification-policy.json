@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "1.0",
+  "releaseVersion": "1.24.26",
+  "mode": "strict",
+  "diagnostic": {
+    "thresholdPercent": 100,
+    "minimumEvaluationCoveragePercent": 100,
+    "allowNotEvaluableForManualTesting": false,
+    "allowFailures": false,
+    "requireDeepRuntimeInference": true,
+    "requireCleanQaFaultState": true,
+    "requireVersionIntegrity": true,
+    "requireAuditManifestIntegrity": true
+  },
+  "productionCertification": {
+    "minimumAssuranceTests": 42,
+    "minimumLiveTests": 11,
+    "minimumSyntheticScenarios": 3,
+    "requireUniqueAssuranceTestIds": true,
+    "requireAllAssuranceTestsPass": true,
+    "requireSecurityPass": true,
+    "requireGoldenPass": true,
+    "requireRagPass": true,
+    "requireAgentTrajectoryPass": true,
+    "requireRecoveryPass": true,
+    "requireTwoModelLifecyclePass": true,
+    "requireBrowserE2EPass": true,
+    "requireAuditForensicsPass": true,
+    "requireSameJobEvidence": true,
+    "forbidStatuses": [
+      "NOT_RUN",
+      "NOT_PROVEN",
+      "UNVERIFIED",
+      "HOLD",
+      "FAIL"
+    ]
+  }
+}

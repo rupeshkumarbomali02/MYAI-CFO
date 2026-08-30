@@ -1,0 +1,14 @@
+<!doctype html><html><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><title>MYAI CFO</title></head><body><div id="root"></div><script>
+(function(){
+  var rootId='root';
+  function renderBootError(kind,message,detail){
+    try{
+      var root=document.getElementById(rootId); if(!root)return;
+      root.innerHTML='<div style="min-height:100vh;background:#07111f;color:#f8fafc;font-family:Segoe UI,Arial,sans-serif;display:flex;align-items:center;justify-content:center;padding:32px;box-sizing:border-box"><div style="max-width:760px;width:100%;border:1px solid #334155;border-radius:18px;background:#0f172a;box-shadow:0 20px 60px rgba(0,0,0,.35);padding:28px"><div style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#7dd3fc;font-weight:700">MYAI CFO • Startup diagnostics</div><h1 style="margin:10px 0 8px;font-size:28px">The interface could not load</h1><p style="color:#cbd5e1;line-height:1.6;margin:0 0 18px">The local kernel may still be running. MYAI CFO captured the frontend startup error instead of leaving a blank page.</p><div style="padding:14px 16px;border-radius:12px;background:#020617;border:1px solid #334155;font-family:Consolas,monospace;font-size:13px;line-height:1.55;white-space:pre-wrap;overflow:auto">'+String(kind)+': '+String(message||'Unknown startup error')+'\n\n'+String(detail||'')+'</div><div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px"><button onclick="location.reload()" style="cursor:pointer;border:1px solid #7dd3fc;background:#f8fafc;color:#020617;border-radius:10px;padding:10px 14px;font-weight:700">Reload</button><button onclick="window.open((new URLSearchParams(location.search).get('apiBase')||'http://127.0.0.1:47821')+'/api/health','_blank','noopener,noreferrer')" style="cursor:pointer;border:1px solid #475569;background:transparent;color:#f8fafc;border-radius:10px;padding:10px 14px">Open API health</button></div></div></div>';
+    }catch(e){}
+  }
+  window.addEventListener('error',function(e){ renderBootError('Frontend error',e.message||'Script error',e.filename?((e.filename+':'+e.lineno+':'+e.colno)||''):'' ); });
+  window.addEventListener('unhandledrejection',function(e){ renderBootError('Unhandled promise rejection',e.reason && e.reason.message ? e.reason.message : String(e.reason||''),'A frontend promise failed during startup.'); });
+})();
+</script>
+<script type="module" src="/src/main.jsx"></script></body></html>

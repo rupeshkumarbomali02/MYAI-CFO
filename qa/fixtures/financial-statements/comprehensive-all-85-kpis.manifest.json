@@ -1,0 +1,12 @@
+{
+  "version": "1.24.26",
+  "purpose": "Comprehensive KPI coverage fixture",
+  "kpiCount": 85,
+  "inputFieldCount": 85,
+  "yearCount": 3,
+  "fiscalYears": [
+    2023,
+    2024,
+    2025
+  ]
+}

@@ -1,0 +1,1 @@
+Authoritative QA fixture 8. MYAIQA_TOPIC_8_VALUATION_METHODS. The governing topic is valuation methods. The unique evidence phrase is MYAIQA_TOPIC_8_VALUATION_METHODS. This paragraph exists solely for production RAG retrieval verification.

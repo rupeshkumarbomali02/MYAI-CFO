@@ -1,0 +1,22 @@
+{
+  "name": "myai-cfo-kernel",
+  "version": "1.24.26",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs",
+    "dev": "node --watch server.mjs",
+    "qa:assurance": "node ../../qa/run-production-assurance.mjs"
+  },
+  "dependencies": {
+    "pdf-parse": "1.1.1",
+    "xlsx": "0.18.5",
+    "mammoth": "1.8.0",
+    "fast-xml-parser": "5.2.5",
+    "cheerio": "1.0.0"
+  },
+  "engines": {
+    "node": ">=20 <25",
+    "npm": ">=10 <12"
+  }
+}

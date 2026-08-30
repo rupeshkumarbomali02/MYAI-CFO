@@ -1,0 +1,12 @@
+{
+  "statuses": [
+    "COMPUTED",
+    "ZERO-DENOMINATOR",
+    "NOT-MEANINGFUL",
+    "MISSING-EVIDENCE",
+    "DATA-INCONSISTENCY",
+    "PROVISIONAL",
+    "VALIDATED"
+  ],
+  "releaseRule": "Missing-evidence and data-inconsistency cannot be represented as authoritative CFO values."
+}

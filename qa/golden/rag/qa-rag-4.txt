@@ -1,0 +1,1 @@
+Authoritative QA fixture 4. MYAIQA_TOPIC_4_AUDIT_MATERIALITY. The governing topic is audit materiality. The unique evidence phrase is MYAIQA_TOPIC_4_AUDIT_MATERIALITY. This paragraph exists solely for production RAG retrieval verification.

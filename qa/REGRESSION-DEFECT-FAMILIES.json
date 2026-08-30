@@ -1,0 +1,312 @@
+{
+  "schemaVersion": "1.0",
+  "releaseVersion": "1.24.26",
+  "purpose": "Permanent regression map built from historical MYAI CFO production-certification failures.",
+  "gate": "A production release cannot declare GO unless each family is either PASS in the current certification evidence or explicitly not applicable with recorded proof.",
+  "defectFamilies": [
+    {
+      "id": "REG-001",
+      "family": "Version integrity",
+      "historicalSymptoms": [
+        "VERSION/hotfix mismatch",
+        "stale certification policy version",
+        "stale release labels"
+      ],
+      "currentControls": [
+        "VERSION.txt authoritative",
+        "package/backend/frontend consistency",
+        "policy.releaseVersion equality",
+        "NO-STALE-RELEASE-REFERENCES"
+      ]
+    },
+    {
+      "id": "REG-002",
+      "family": "Reference data",
+      "historicalSymptoms": [
+        "0 countries",
+        "0 currencies",
+        "empty company form dropdowns"
+      ],
+      "currentControls": [
+        "249 country fixture",
+        "181 currency fixture",
+        "backend fallback to frontend public",
+        "reference list diagnostic"
+      ]
+    },
+    {
+      "id": "REG-003",
+      "family": "Certification harness readiness",
+      "historicalSymptoms": [
+        "backend not HTTP reachable",
+        "fetch AbortError",
+        "exit code 2 before product gates"
+      ],
+      "currentControls": [
+        "ephemeral port",
+        "PID/TCP/HTTP readiness",
+        "stdout/stderr capture",
+        "terminal state guard"
+      ]
+    },
+    {
+      "id": "REG-004",
+      "family": "Evidence provisioning and visible-state synchronization",
+      "historicalSymptoms": [
+        "certification created evidence but UI showed none",
+        "company/document counts diverged"
+      ],
+      "currentControls": [
+        "same-job evidence",
+        "visible API base",
+        "company/document verification",
+        "frontend-visible state assertions"
+      ]
+    },
+    {
+      "id": "REG-005",
+      "family": "Financial fact integrity",
+      "historicalSymptoms": [
+        "Dashboard missing cash/assets/liabilities/debt",
+        "ratio inputs incomplete"
+      ],
+      "currentControls": [
+        "golden 84 KPI matrix",
+        "financial statement fixtures",
+        "canonical fact reconciliation",
+        "downstream transmission checks"
+      ]
+    },
+    {
+      "id": "REG-006",
+      "family": "RAG lifecycle",
+      "historicalSymptoms": [
+        "NO_LOCAL_MODEL masking inference failures",
+        "generation affected by prior Moni jobs",
+        "missing citation diagnostics"
+      ],
+      "currentControls": [
+        "runtime checkpoint",
+        "job drain",
+        "reason/code/message/diagnostics capture",
+        "grounding and citation gates"
+      ]
+    },
+    {
+      "id": "REG-007",
+      "family": "Agent trajectory",
+      "historicalSymptoms": [
+        "fixed completion window",
+        "missing trajectory fields"
+      ],
+      "currentControls": [
+        "drain previous jobs",
+        "runtime checkpoint",
+        "bounded 180s wait",
+        "required trajectory schema"
+      ]
+    },
+    {
+      "id": "REG-008",
+      "family": "Recovery",
+      "historicalSymptoms": [
+        "auto-repair failure evidence incomplete"
+      ],
+      "currentControls": [
+        "failure injection",
+        "response body/code capture",
+        "independent post-repair verification",
+        "retest"
+      ]
+    },
+    {
+      "id": "REG-009",
+      "family": "Two-model lifecycle",
+      "historicalSymptoms": [
+        "production model lifecycle unproven"
+      ],
+      "currentControls": [
+        "live model proof",
+        "second-model lifecycle gate",
+        "switch/unload/reload assertions"
+      ]
+    },
+    {
+      "id": "REG-010",
+      "family": "Cross-company isolation",
+      "historicalSymptoms": [
+        "risk of evidence contamination across company context"
+      ],
+      "currentControls": [
+        "A/B sentinel fixture",
+        "companyId trace check",
+        "document scope verification"
+      ]
+    },
+    {
+      "id": "REG-011",
+      "family": "Package contamination",
+      "historicalSymptoms": [
+        "runtime state/cert artifacts leaking into release"
+      ],
+      "currentControls": [
+        "package safety",
+        "fresh certification boundary",
+        "stale latest-output cleanup",
+        "generated-result exclusion"
+      ]
+    },
+    {
+      "id": "REG-012",
+      "family": "Clean reproducibility",
+      "historicalSymptoms": [
+        "clean npm ci/build/browser not proven"
+      ],
+      "currentControls": [
+        "backend/frontend lockfiles",
+        "clean npm ci",
+        "Vite production build",
+        "Playwright production E2E"
+      ]
+    },
+    {
+      "id": "REG-013",
+      "family": "Document extraction signal and request-timeout contract",
+      "historicalSymptoms": [
+        "PDF reprocess failed with \"options.signal ... Received null\"",
+        "early synthetic seed timed out during synchronous PDF extraction despite server-side commit"
+      ],
+      "currentControls": [
+        "optional AbortSignal omission for non-cancellable paths",
+        "real AbortController for document reprocess",
+        "idempotent company/document reconciliation after client timeout",
+        "10-minute upload/knowledge provisioning timeout",
+        "company visibility assertion before every document upload"
+      ]
+    },
+    {
+      "id": "REG-014",
+      "family": "Active company context synchronization",
+      "historicalSymptoms": [
+        "companies/documents exist but activeCompanyId is unset",
+        "Dashboard/Intelligence/Arena report no company evidence despite full evidence state"
+      ],
+      "currentControls": [
+        "select Healthy immediately after company creation",
+        "active-company verification before downstream stages",
+        "visible UI/API company context assertion"
+      ]
+    },
+    {
+      "id": "REG-015",
+      "family": "Windows PDF extraction resource stability",
+      "historicalSymptoms": [
+        "late synthetic statements fail after earlier statements succeed",
+        "optional layout/OCR runtimes destabilize evidence transaction"
+      ],
+      "currentControls": [
+        "deterministic PyMuPDF/pdfplumber spine by default",
+        "heavy layout extractors opt-in",
+        "sequential per-document extraction wait",
+        "bounded process/time controls"
+      ]
+    },
+    {
+      "id": "REG-016",
+      "family": "Certification PowerShell scope propagation",
+      "historicalSymptoms": [
+        "CERT-004A creates backend but CERT-004B sees no certification base URL"
+      ],
+      "currentControls": [
+        "script-scoped certification API/backend variables",
+        "stage context persistence",
+        "same-job evidence checks"
+      ]
+    },
+    {
+      "id": "REG-017",
+      "family": "Certification teardown/save race",
+      "historicalSymptoms": [
+        "backend attempted state save after sandbox deletion",
+        "ENOENT state.json and ERR_STREAM_DESTROYED"
+      ],
+      "currentControls": [
+        "persistence closed on SIGTERM/SIGINT",
+        "teardown flag causes state writes to fail closed",
+        "backend stopped before certification root deletion"
+      ]
+    }
+  ],
+  "families": [
+    {
+      "id": "REG-021",
+      "name": "Financial document URL ingestion and provenance",
+      "permanent": true
+    },
+    {
+      "id": "REG-022",
+      "name": "Retrieved-content security false-positive separation",
+      "permanent": true
+    },
+    {
+      "id": "REG-023",
+      "name": "Explicit company scope and stale-scope reconciliation",
+      "permanent": true
+    },
+    {
+      "id": "REG-024",
+      "name": "Source-scale financial presentation",
+      "permanent": true
+    },
+    {
+      "id": "REG-025",
+      "name": "IFRS 16 deterministic standards answer",
+      "permanent": true
+    },
+    {
+      "id": "REG-026",
+      "name": "Clean-baseline deferred-check presentation",
+      "permanent": true
+    },
+    {
+      "id": "REG-027",
+      "name": "Financial Intelligence fact-rank scope integrity",
+      "permanent": true
+    },
+    {
+      "id": "REG-028",
+      "name": "Targeted auto-repair and preservation",
+      "permanent": true
+    },
+    {
+      "id": "REG-029",
+      "name": "Financial semantic warning without fact destruction",
+      "permanent": true
+    },
+    {
+      "id": "REG-030",
+      "name": "Multi-engine document extraction fallback",
+      "permanent": true
+    },
+    {
+      "id": "REG-031",
+      "name": "Financial document title and extracted-text access",
+      "permanent": true
+    },
+    {
+      "id": "REG-032",
+      "name": "Document/Knowledge visual and table evidence",
+      "permanent": true
+    },
+    {
+      "id": "REG-033",
+      "name": "Answer provenance and source citation contract",
+      "permanent": true
+    },
+    {
+      "id": "REG-034",
+      "name": "Deterministic financial-answer evidence binding",
+      "permanent": true
+    }
+  ]
+}

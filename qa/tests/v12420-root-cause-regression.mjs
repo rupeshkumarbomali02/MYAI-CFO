@@ -1,0 +1,12 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+const server=fs.readFileSync(new URL('../../app/backend/server.mjs',import.meta.url),'utf8');
+const cert=fs.readFileSync(new URL('../Run-ProductionCertification-Core.ps1',import.meta.url),'utf8');
+assert.match(server,/sourceNumericIsExplicitZero/);
+assert.match(server,/current_liabilities_zero/);
+assert.match(server,/preferNonZero:true/);
+assert.match(server,/ratioPairDiagnostics/);
+assert.match(server,/const paDeterministicAnswer=null/);
+assert.match(cert,/api\/models\/runtime\/unload/);
+assert.match(cert,/api\/models\/runtime\/load/);
+console.log(JSON.stringify({status:'PASS',checks:7}));

@@ -1,0 +1,1 @@
+Authoritative QA fixture 3. MYAIQA_TOPIC_3_TAX_DEPRECIATION. The governing topic is tax depreciation. The unique evidence phrase is MYAIQA_TOPIC_3_TAX_DEPRECIATION. This paragraph exists solely for production RAG retrieval verification.

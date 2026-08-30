@@ -1,0 +1,99 @@
+{
+  "policyId": "MYAI-CFO-CORE-AUP",
+  "version": "3.0",
+  "mode": "fail-closed-deny-by-default",
+  "appliesTo": [
+    "user_input",
+    "retrieved_content",
+    "tool_input",
+    "tool_output",
+    "agent_input",
+    "agent_output",
+    "model_input",
+    "model_output",
+    "generated_actions"
+  ],
+  "categories": [
+    {
+      "id": "weapons_cbrn",
+      "action": "block",
+      "title": "Weapons and CBRN material"
+    },
+    {
+      "id": "malicious_code_cyber",
+      "action": "block",
+      "title": "Malicious code and harmful cyber activity"
+    },
+    {
+      "id": "child_safety",
+      "action": "block",
+      "title": "Child sexual exploitation or abuse"
+    },
+    {
+      "id": "fraud_scams_deception",
+      "action": "block",
+      "title": "Fraud, scams and deceptive practices"
+    },
+    {
+      "id": "violence_harassment_hate",
+      "action": "block",
+      "title": "Violence, harassment and hateful conduct"
+    },
+    {
+      "id": "self_harm_suicide",
+      "action": "block_or_support",
+      "title": "Self-harm and suicide"
+    },
+    {
+      "id": "adult_sexual_content",
+      "action": "block",
+      "title": "Adult sexual content"
+    },
+    {
+      "id": "election_integrity",
+      "action": "block",
+      "title": "Election misinformation and election-integrity abuse"
+    },
+    {
+      "id": "privacy_violation",
+      "action": "block",
+      "title": "Privacy violations and unlawful surveillance"
+    },
+    {
+      "id": "regulated_professional_advice",
+      "action": "restrict",
+      "title": "Regulated professional advice"
+    },
+    {
+      "id": "high_risk_automated_decisions",
+      "action": "human_review",
+      "title": "High-risk automated decision-making"
+    }
+  ],
+  "principles": [
+    "The Core Policy Kernel is a mandatory system boundary, not a prompt.",
+    "No registered agent, model, RAG source, tool, MCP server or provider may write directly to the user interface.",
+    "Every user, agent, model and tool boundary is policy-checked.",
+    "Policy failures deny execution or output and fail closed.",
+    "Policy enforcement is independent of the selected model or agent.",
+    "Company isolation, evidence provenance and human-approval controls are separate mandatory gates.",
+    "The UI exposes no switch that disables or weakens the Core Policy Kernel.",
+    "High-risk automated decisions require human review.",
+    "Local administrators can modify software outside normal runtime controls; integrity verification is therefore used to detect policy-file modification."
+  ],
+  "notices": [
+    "General educational, historical, journalistic and safety discussion may be permitted where it does not provide prohibited operational assistance.",
+    "Financial, legal, tax and other professional information is assistance and must not be presented as a substitute for qualified professional review."
+  ],
+  "enforcement": {
+    "preExecution": true,
+    "postGeneration": true,
+    "toolBoundary": true,
+    "agentBoundary": true,
+    "modelBoundary": true,
+    "audit": true,
+    "uiOverride": false,
+    "runtimeOverride": false,
+    "failureMode": "deny"
+  }
+}

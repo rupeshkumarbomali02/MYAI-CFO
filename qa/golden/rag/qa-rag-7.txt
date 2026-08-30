@@ -1,0 +1,1 @@
+Authoritative QA fixture 7. MYAIQA_TOPIC_7_CASH_FLOW_STATEMENT. The governing topic is cash flow statement. The unique evidence phrase is MYAIQA_TOPIC_7_CASH_FLOW_STATEMENT. This paragraph exists solely for production RAG retrieval verification.

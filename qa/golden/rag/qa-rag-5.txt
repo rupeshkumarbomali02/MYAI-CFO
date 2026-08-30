@@ -1,0 +1,1 @@
+Authoritative QA fixture 5. MYAIQA_TOPIC_5_IMPAIRMENT_TESTING. The governing topic is impairment testing. The unique evidence phrase is MYAIQA_TOPIC_5_IMPAIRMENT_TESTING. This paragraph exists solely for production RAG retrieval verification.

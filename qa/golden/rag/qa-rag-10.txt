@@ -1,0 +1,1 @@
+Authoritative QA fixture 10. MYAIQA_TOPIC_10_GOING_CONCERN. The governing topic is going concern. The unique evidence phrase is MYAIQA_TOPIC_10_GOING_CONCERN. This paragraph exists solely for production RAG retrieval verification.

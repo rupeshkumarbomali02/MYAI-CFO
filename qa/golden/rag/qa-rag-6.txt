@@ -1,0 +1,1 @@
+Authoritative QA fixture 6. MYAIQA_TOPIC_6_WORKING_CAPITAL. The governing topic is working capital. The unique evidence phrase is MYAIQA_TOPIC_6_WORKING_CAPITAL. This paragraph exists solely for production RAG retrieval verification.

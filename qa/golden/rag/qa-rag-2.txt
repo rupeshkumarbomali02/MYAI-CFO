@@ -1,0 +1,1 @@
+Authoritative QA fixture 2. MYAIQA_TOPIC_2_REVENUE_RECOGNITION. The governing topic is revenue recognition. The unique evidence phrase is MYAIQA_TOPIC_2_REVENUE_RECOGNITION. This paragraph exists solely for production RAG retrieval verification.

@@ -1,0 +1,165 @@
+{
+  "manifest": [
+    {
+      "companyKey": "healthy",
+      "companyName": "MYAI CFO Test \u2014 Healthy",
+      "currency": "USD",
+      "framework": "US GAAP",
+      "statementType": "Income Statement",
+      "filename": "healthy-income-2024-2025.pdf",
+      "fiscalYears": [
+        "2024",
+        "2025"
+      ],
+      "source": "synthetic-certification-fixture"
+    },
+    {
+      "companyKey": "healthy",
+      "companyName": "MYAI CFO Test \u2014 Healthy",
+      "currency": "USD",
+      "framework": "US GAAP",
+      "statementType": "Balance Sheet",
+      "filename": "healthy-balance-2024-2025.pdf",
+      "fiscalYears": [
+        "2024",
+        "2025"
+      ],
+      "source": "synthetic-certification-fixture"
+    },
+    {
+      "companyKey": "healthy",
+      "companyName": "MYAI CFO Test \u2014 Healthy",
+      "currency": "USD",
+      "framework": "US GAAP",
+      "statementType": "Cash Flow Statement",
+      "filename": "healthy-cashflow-2024-2025.pdf",
+      "fiscalYears": [
+        "2024",
+        "2025"
+      ],
+      "source": "synthetic-certification-fixture"
+    },
+    {
+      "companyKey": "stress",
+      "companyName": "MYAI CFO Test \u2014 Stress",
+      "currency": "GBP",
+      "framework": "IFRS",
+      "statementType": "Income Statement",
+      "filename": "stress-income-2024-2025.pdf",
+      "fiscalYears": [
+        "2024",
+        "2025"
+      ],
+      "source": "synthetic-certification-fixture"
+    },
+    {
+      "companyKey": "stress",
+      "companyName": "MYAI CFO Test \u2014 Stress",
+      "currency": "GBP",
+      "framework": "IFRS",
+      "statementType": "Balance Sheet",
+      "filename": "stress-balance-2024-2025.pdf",
+      "fiscalYears": [
+        "2024",
+        "2025"
+      ],
+      "source": "synthetic-certification-fixture"
+    },
+    {
+      "companyKey": "stress",
+      "companyName": "MYAI CFO Test \u2014 Stress",
+      "currency": "GBP",
+      "framework": "IFRS",
+      "statementType": "Cash Flow Statement",
+      "filename": "stress-cashflow-2024-2025.pdf",
+      "fiscalYears": [
+        "2024",
+        "2025"
+      ],
+      "source": "synthetic-certification-fixture"
+    },
+    {
+      "companyKey": "inconsistent",
+      "companyName": "MYAI CFO Test \u2014 Inconsistent",
+      "currency": "INR",
+      "framework": "Ind AS",
+      "statementType": "Income Statement",
+      "filename": "inconsistent-income-2024-2025.pdf",
+      "fiscalYears": [
+        "2024",
+        "2025"
+      ],
+      "source": "synthetic-certification-fixture"
+    },
+    {
+      "companyKey": "inconsistent",
+      "companyName": "MYAI CFO Test \u2014 Inconsistent",
+      "currency": "INR",
+      "framework": "Ind AS",
+      "statementType": "Balance Sheet",
+      "filename": "inconsistent-balance-2024-2025.pdf",
+      "fiscalYears": [
+        "2024",
+        "2025"
+      ],
+      "source": "synthetic-certification-fixture"
+    },
+    {
+      "companyKey": "inconsistent",
+      "companyName": "MYAI CFO Test \u2014 Inconsistent",
+      "currency": "INR",
+      "framework": "Ind AS",
+      "statementType": "Cash Flow Statement",
+      "filename": "inconsistent-cashflow-2024-2025.pdf",
+      "fiscalYears": [
+        "2024",
+        "2025"
+      ],
+      "source": "synthetic-certification-fixture"
+    },
+    {
+      "companyKey": "comprehensive",
+      "companyName": "MYAI CFO Test \u2014 Comprehensive",
+      "currency": "USD",
+      "framework": "US GAAP",
+      "statementType": "Income Statement",
+      "filename": "comprehensive-income-2023-2025.pdf",
+      "fiscalYears": [
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "source": "production-certification-comprehensive"
+    },
+    {
+      "companyKey": "comprehensive",
+      "companyName": "MYAI CFO Test \u2014 Comprehensive",
+      "currency": "USD",
+      "framework": "US GAAP",
+      "statementType": "Balance Sheet",
+      "filename": "comprehensive-balance-2023-2025.pdf",
+      "fiscalYears": [
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "source": "production-certification-comprehensive"
+    },
+    {
+      "companyKey": "comprehensive",
+      "companyName": "MYAI CFO Test \u2014 Comprehensive",
+      "currency": "USD",
+      "framework": "US GAAP",
+      "statementType": "Cash Flow Statement",
+      "filename": "comprehensive-cashflow-2023-2025.pdf",
+      "fiscalYears": [
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "source": "production-certification-comprehensive"
+    }
+  ],
+  "knowledgePdf": "certification-knowledge-evidence.pdf",
+  "knowledgeUrl": "https://cert.myai-cfo.local/synthetic/knowledge-controls"
+}

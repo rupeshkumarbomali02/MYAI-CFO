@@ -1,0 +1,1 @@
+Authoritative QA fixture 9. MYAIQA_TOPIC_9_TRANSFER_PRICING. The governing topic is transfer pricing. The unique evidence phrase is MYAIQA_TOPIC_9_TRANSFER_PRICING. This paragraph exists solely for production RAG retrieval verification.
