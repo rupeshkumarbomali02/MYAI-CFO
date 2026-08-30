@@ -1,7 +1,9 @@
-# MYAI CFO 1.24.26
+## Project Status
 
-Local-first, company-isolated finance intelligence MVP candidate.
+MYAI CFO is an evolving MVP and is being opened for early community use and feedback.
 
-This release includes the application, certification harness, QA tooling, the bundled 85-KPI comprehensive fixture, fiscal-year/financial evidence regressions, and optional PdfTable table-extraction integration.
+The production certification process is intentionally kept separate from the public development release.
 
-Production status: HOLD until target-level certification proves all mandatory gates.
+**Internal production certification status: HOLD**
+
+The production designation will only be changed after all mandatory target-level certification gates pass.
